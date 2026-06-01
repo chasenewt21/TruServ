@@ -144,3 +144,7 @@ vite.config.ts.timestamp-*
 
 .DS_Store
 .claude/
+
+# Python cache
+__pycache__/
+*.pyc
