@@ -468,6 +468,10 @@ table.data .no  { color: var(--gray); }
 /* =========================================================== */
 @media (max-width: 720px) {
   .nav-links { display: none; }
+  /* Stack the email and address on separate lines (drop the bullet). */
+  .cta-meta .cta-divider { display: none; }
+  .cta-email, .cta-address { display: block; }
+  .cta-address { margin-top: .35rem; }
   /* The hero already shows a big Call button, so hide the nav's duplicate
      until the user scrolls past it. This also avoids a lone, off-center
      button sitting in the bar on first load. */
