@@ -66,12 +66,9 @@ a:hover { color: var(--navy); }
 img { max-width: 100%; height: auto; }
 h1,h2,h3 { margin: 0; }
 
-/* Ampersand (used only in the brand name): a plain upright serif glyph,
-   kept understated so it sits quietly within the wordmark. */
+/* Ampersand matches the surrounding text exactly (same font, weight, size). */
 .amp {
-  font-family: Georgia, "Times New Roman", serif;
-  font-style: normal;
-  font-weight: 400;
+  font: inherit;
 }
 
 .container {
