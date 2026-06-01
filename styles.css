@@ -465,7 +465,11 @@ table.data .no  { color: var(--gray); }
 /* =========================================================== */
 @media (max-width: 720px) {
   .nav-links { display: none; }
-  .nav-cta { margin-left: auto; }
+  /* The hero already shows a big Call button, so hide the nav's duplicate
+     until the user scrolls past it. This also avoids a lone, off-center
+     button sitting in the bar on first load. */
+  .site-nav:not(.scrolled) .nav-cta { display: none; }
+  .nav-inner .nav-cta { margin-left: auto; }
 }
 
 /* =========================================================== */
