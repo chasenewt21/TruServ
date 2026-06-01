@@ -245,13 +245,16 @@ h1,h2,h3 { margin: 0; }
 /* WAVE DIVIDERS                                               */
 /* =========================================================== */
 .wave-divider { display: block; width: 100%; line-height: 0; }
-.wave-divider svg { display: block; width: 100%; height: clamp(48px, 7vw, 90px); }
+.wave-divider svg { display: block; width: 100%; height: clamp(40px, 5vw, 60px); }
 
 /* =========================================================== */
 /* SECTIONS (generic)                                          */
 /* =========================================================== */
-.section { padding: clamp(3.5rem, 8vw, 6rem) 0; position: relative; }
+.section { padding: clamp(2.75rem, 5vw, 4.25rem) 0; position: relative; }
 .section[id] { scroll-margin-top: var(--nav-h); }
+/* A wave divider already separates these sections, so pull the content
+   up close to it instead of stacking full padding on top. */
+.wave-divider + .section { padding-top: clamp(1.25rem, 2.5vw, 1.75rem); }
 
 /* Logo is a JPG on white — multiply blends the white into light
    backgrounds so it never shows a hard rectangle. */
