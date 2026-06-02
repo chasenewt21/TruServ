@@ -267,9 +267,9 @@ h1,h2,h3 { margin: 0; }
 .section-head { text-align: center; max-width: 42rem; margin: 0 auto clamp(2rem,5vw,3rem); }
 .eyebrow {
   display: inline-block;
-  font-size: .8rem; font-weight: 700; letter-spacing: .16em;
+  font-size: 1.05rem; font-weight: 700; letter-spacing: .14em;
   text-transform: uppercase; color: var(--blue);
-  margin-bottom: .75rem;
+  margin-bottom: .85rem;
 }
 .navy .eyebrow { color: #7fb6e6; }
 .section-title {
