@@ -148,3 +148,4 @@ vite.config.ts.timestamp-*
 # Python cache
 __pycache__/
 *.pyc
+dist/
