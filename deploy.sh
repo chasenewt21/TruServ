@@ -7,7 +7,7 @@ set -euo pipefail
 BRANCH="${1:-main}"
 
 rm -rf dist && mkdir dist
-cp index.html privacy.html terms.html styles.css app.js dist/
+cp index.html privacy.html terms.html styles.css app.js _headers dist/
 cp -r assets dist/
 
 npx -y wrangler pages deploy dist --project-name=truserv --branch="$BRANCH" --commit-dirty=true
