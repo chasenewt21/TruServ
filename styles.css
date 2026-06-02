@@ -170,7 +170,14 @@ h1,h2,h3 { margin: 0; }
 .hero-media { position: relative; min-height: 260px; }
 .hero-media img {
   width: 100%; height: 100%; object-fit: cover;
-  object-position: 28% 45%; display: block;
+  object-position: 12% 45%; display: block;
+}
+/* On the desktop split, fade the photo's right edge into the navy panel. */
+@media (min-width: 881px) {
+  .hero-media::after {
+    content: ""; position: absolute; inset: 0; pointer-events: none;
+    background: linear-gradient(90deg, rgba(22,41,77,0) 70%, var(--navy-deep) 100%);
+  }
 }
 
 .hero-panel {
