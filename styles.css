@@ -469,6 +469,9 @@ table.data .no  { color: var(--gray); }
   .cta-meta .cta-divider { display: none; }
   .cta-email, .cta-address { display: block; }
   .cta-address { margin-top: .35rem; }
+  /* Break the hero subline into two whole phrases instead of wrapping mid-phrase. */
+  .subline .subline-dot { display: none; }
+  .subline .subline-seg { display: block; }
   /* The hero already shows a big Call button, so hide the nav's duplicate
      until the user scrolls past it. This also avoids a lone, off-center
      button sitting in the bar on first load. */
