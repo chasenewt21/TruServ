@@ -161,31 +161,34 @@ h1,h2,h3 { margin: 0; }
 .hero {
   position: relative;
   display: grid;
-  grid-template-columns: 1.02fr 1fr;
+  grid-template-columns: 1fr 1fr;
   min-height: min(80vh, 700px);
   overflow: hidden;
   padding-top: var(--nav-h);   /* clear the fixed nav */
 }
 
-.hero-media { position: relative; min-height: 260px; }
+/* Full-bleed photo behind everything. */
+.hero-media { position: absolute; inset: 0; z-index: 0; }
 .hero-media img {
   width: 100%; height: 100%; object-fit: cover;
-  object-position: 12% 45%; display: block;
+  object-position: 50% 40%; display: block;
 }
-/* On the desktop split, fade the photo's right edge into the navy panel. */
-@media (min-width: 881px) {
-  .hero-media::after {
-    content: ""; position: absolute; inset: 0; pointer-events: none;
-    background: linear-gradient(90deg, rgba(22,41,77,0) 70%, var(--navy-deep) 100%);
-  }
+/* One continuous gradient across the whole hero: clear over the van, solid
+   navy at the far-right edge — no seam between photo and text. */
+.hero-media::after {
+  content: ""; position: absolute; inset: 0; pointer-events: none;
+  background: linear-gradient(90deg,
+    rgba(22,41,77,0) 38%,
+    rgba(22,41,77,.65) 50%,
+    rgba(22,41,77,.96) 64%,
+    var(--navy-deep) 78%);
 }
 
 .hero-panel {
+  position: relative; z-index: 1;
+  grid-column: 2;
   display: flex; align-items: center;
   padding: clamp(2.5rem, 5vw, 4rem) clamp(1.5rem, 5vw, 4rem);
-  background:
-    radial-gradient(85% 120% at 100% 0%, rgba(28,117,188,.30) 0%, rgba(28,117,188,0) 55%),
-    linear-gradient(160deg, var(--navy) 0%, var(--navy-deep) 100%);
   color: #fff;
 }
 .hero-content { width: 100%; max-width: 34rem; text-align: left; }
@@ -235,8 +238,14 @@ h1,h2,h3 { margin: 0; }
 
 /* Stack the hero (photo on top, panel below) on smaller screens. */
 @media (max-width: 880px) {
-  .hero { grid-template-columns: 1fr; min-height: 0; }
-  .hero-media { height: clamp(210px, 38vh, 330px); min-height: 0; }
+  .hero { display: block; min-height: 0; }
+  .hero-media { position: static; height: clamp(210px, 40vh, 340px); }
+  .hero-media img { object-position: 18% 45%; }
+  .hero-media::after { display: none; }
+  .hero-panel {
+    background: linear-gradient(160deg, var(--navy) 0%, var(--navy-deep) 100%);
+    text-align: center;
+  }
   .hero-content { max-width: none; text-align: center; }
   .hero-actions { justify-content: center; }
 }
