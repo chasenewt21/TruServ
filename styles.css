@@ -201,6 +201,13 @@ h1,h2,h3 { margin: 0; }
   letter-spacing: -0.01em;
   color: #fff;
 }
+/* Orange accent bar under the hero headline (echoes the logo flame). */
+.hero-content .tagline::after {
+  content: ""; display: block;
+  width: 64px; height: 4px; border-radius: 4px;
+  background: var(--orange);
+  margin: 1rem auto 0 0;
+}
 
 .subline {
   font-size: clamp(.95rem, 1.5vw, 1.1rem);
@@ -249,6 +256,7 @@ h1,h2,h3 { margin: 0; }
     text-align: center;
   }
   .hero-content { max-width: none; text-align: center; }
+  .hero-content .tagline::after { margin-inline: auto; }
   .hero-actions { justify-content: center; }
 }
 
@@ -282,10 +290,10 @@ h1,h2,h3 { margin: 0; }
 .eyebrow {
   display: inline-block;
   font-size: 1.05rem; font-weight: 700; letter-spacing: .14em;
-  text-transform: uppercase; color: var(--blue);
+  text-transform: uppercase; color: var(--orange);
   margin-bottom: .85rem;
 }
-.navy .eyebrow { color: #7fb6e6; }
+.navy .eyebrow { color: #ff9e57; }
 .section-title {
   font-family: var(--font-display); font-weight: 600;
   font-size: clamp(1.7rem, 4.5vw, 2.6rem); line-height: 1.12;
@@ -327,10 +335,35 @@ h1,h2,h3 { margin: 0; }
   background: var(--bg-tint); color: var(--blue);
   transition: background .3s ease, color .3s ease;
 }
-.card:hover .card-icon { background: var(--blue); color: #fff; }
+.card:hover .card-icon { background: var(--orange); color: #fff; }
 .card-icon svg { width: 28px; height: 28px; }
 .card h3 { font-size: 1.2rem; color: var(--navy); margin-bottom: .4rem; }
 .card p { margin: 0; color: var(--ink-soft); font-size: 1rem; }
+
+/* =========================================================== */
+/* OUR WORK (gallery)                                          */
+/* =========================================================== */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 16rem), 1fr));
+  gap: 1.25rem;
+}
+.shot {
+  margin: 0; border-radius: var(--radius); overflow: hidden;
+  box-shadow: var(--shadow-md); aspect-ratio: 1 / 1;
+  position: relative;
+}
+.shot::after {
+  content: ""; position: absolute; inset: auto 0 0 0; height: 4px;
+  background: linear-gradient(90deg, var(--blue), var(--orange));
+  transform: scaleX(0); transform-origin: left; transition: transform .4s var(--ease);
+}
+.shot img {
+  width: 100%; height: 100%; object-fit: cover; display: block;
+  transition: transform .5s var(--ease);
+}
+.shot:hover img { transform: scale(1.05); }
+.shot:hover::after { transform: scaleX(1); }
 
 /* =========================================================== */
 /* WHY US (feature list)                                       */
@@ -344,7 +377,7 @@ h1,h2,h3 { margin: 0; }
 .feature-mark {
   flex: 0 0 auto; width: 44px; height: 44px; border-radius: 50%;
   display: grid; place-items: center;
-  background: rgba(28,117,188,.1); color: var(--blue);
+  background: rgba(244,122,32,.12); color: var(--orange);
 }
 .feature-mark svg { width: 24px; height: 24px; }
 .feature h3 { font-size: 1.12rem; color: var(--navy); margin-bottom: .25rem; }
@@ -364,7 +397,7 @@ h1,h2,h3 { margin: 0; }
   box-shadow: var(--shadow-sm);
   transition: transform .2s ease, color .2s ease, border-color .2s ease;
 }
-.area-chip:hover { transform: translateY(-2px); color: var(--blue); border-color: var(--blue); }
+.area-chip:hover { transform: translateY(-2px); color: var(--orange); border-color: var(--orange); }
 .areas-note { text-align: center; color: var(--ink-soft); margin-top: 1.5rem; }
 
 /* =========================================================== */
