@@ -249,11 +249,12 @@ h1,h2,h3 { margin: 0; }
   /* Taller, near-square banner so the wide photo crops to the centered
      technicians + van instead of showing a lot of empty road. */
   .hero-media { position: static; aspect-ratio: 4 / 3; max-height: 60vh; }
-  .hero-media img { object-position: 12% 45%; }
+  .hero-media img { object-position: 5% 45%; }
   .hero-media::after { display: none; }
   .hero-panel {
     background: linear-gradient(160deg, var(--navy) 0%, var(--navy-deep) 100%);
     text-align: center;
+    margin-top: -1px;   /* cover sub-pixel hairline between photo and panel */
   }
   .hero-content { max-width: none; text-align: center; }
   .hero-content .tagline::after { margin-inline: auto; }
