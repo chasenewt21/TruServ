@@ -435,12 +435,6 @@ h1,h2,h3 { margin: 0; }
   padding: .8rem 1rem 1rem;
   font-size: .92rem; line-height: 1.45; color: var(--ink-soft);
 }
-.shot-tag {
-  display: block;
-  font-size: .68rem; font-weight: 700; letter-spacing: .12em;
-  text-transform: uppercase; color: var(--orange);
-  margin-bottom: .25rem;
-}
 .gallery-note {
   text-align: center; color: var(--gray); font-style: italic;
   max-width: 40rem; margin: 1.75rem auto 0;

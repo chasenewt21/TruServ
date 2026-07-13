@@ -49,8 +49,7 @@ Each photo is one `<figure class="shot">` block in `index.html` (section
 
 1. Drop a web-optimized JPG in `assets/` (aim for ~1000px wide, under 250KB).
 2. Copy an existing `<figure class="shot">…</figure>` block.
-3. Set the image `src`/`alt`, the category tag (`Behind the walls`,
-   `Finished space`, `Before / after`), and a one-line caption.
+3. Set the image `src`/`alt` and a one-line caption.
 4. Newest photos go first. Deploy with `./deploy.sh dev` to preview,
    `./deploy.sh` to publish.
 
