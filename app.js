@@ -14,7 +14,22 @@
     window.addEventListener("scroll", onScroll, { passive: true });
   }
 
-  /* 2. Scroll reveals */
+  /* 2. Fixture options pop-up */
+  var modal = document.getElementById("fixture-modal");
+  if (modal && typeof modal.showModal === "function") {
+    document.querySelectorAll("[data-open-fixtures]").forEach(function (btn) {
+      btn.addEventListener("click", function () { modal.showModal(); });
+    });
+    modal.querySelectorAll("[data-close-fixtures]").forEach(function (btn) {
+      btn.addEventListener("click", function () { modal.close(); });
+    });
+    /* Click on the backdrop (outside the panel) closes it. */
+    modal.addEventListener("click", function (e) {
+      if (e.target === modal) modal.close();
+    });
+  }
+
+  /* 3. Scroll reveals */
   var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   var items = document.querySelectorAll(".reveal");
 

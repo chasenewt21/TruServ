@@ -44,8 +44,9 @@ configuration needed; `index.html` is the entry point.
 
 ## Updating the "Our Work" gallery
 
-Each photo is one `<figure class="shot">` block in `index.html` (section
-`id="work"`). To add a photo:
+The full gallery lives on `gallery.html` (the home page shows a one-image
+teaser linking to it). Each photo is one `<figure class="shot">` block. To
+add a photo:
 
 1. Drop a web-optimized JPG in `assets/` (aim for ~1000px wide, under 250KB).
 2. Copy an existing `<figure class="shot">…</figure>` block.

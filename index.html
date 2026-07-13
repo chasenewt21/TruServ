@@ -83,6 +83,7 @@
             </div>
             <h3>Plumbing Repairs and Installation</h3>
             <p>Leak investigations, faucet and fixture repairs and installation, plus plumbing system repair and replacement.</p>
+            <button class="card-more" type="button" data-open-fixtures>See fixture options →</button>
           </article>
 
           <article class="card">
@@ -118,49 +119,65 @@
           </article>
         </div>
 
-        <!-- Everyday flat-rate services -->
+        <!-- Everyday fixture services (condensed) -->
         <div class="flat-rates reveal">
           <div class="flat-rates-head">
-            <h3>Everyday upgrades, one flat rate.</h3>
-            <p>Popular fixture services at a set price, quoted up front. One call and it's scheduled.</p>
+            <h3>Everyday fixture services</h3>
+            <p>Faucets, toilets, disposals, and more — priced up front and scheduled with one call.</p>
           </div>
-          <ul class="rate-list stagger" data-stagger="80">
-            <li class="rate-item">
-              <span class="rate-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h8a4 4 0 0 1 4 4v1"/><path d="M13 17h6v2h-6z"/><path d="M8 12V8h4v4"/><path d="M7 8h6"/><path d="M16 21v.01"/></svg></span>
-              <div class="rate-body">
-                <h4>Faucet Install or Replacement <span class="rate-badge">Flat rate</span></h4>
-                <p>Kitchen and bath faucets, installed clean and leak-free.</p>
-              </div>
-              <a class="rate-cta" href="tel:+16177620064">Get a price</a>
-            </li>
-            <li class="rate-item">
-              <span class="rate-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v3"/><path d="M7 10a5 5 0 0 1 10 0v1H7z"/><path d="M8 14v1.5M12 14v1.5M16 14v1.5M10 18v1.5M14 18v1.5"/></svg></span>
-              <div class="rate-body">
-                <h4>Shower Trim Upgrade <span class="rate-badge">Flat rate</span></h4>
-                <p>Refresh the look and feel of your shower without opening walls.</p>
-              </div>
-              <a class="rate-cta" href="tel:+16177620064">Get a price</a>
-            </li>
-            <li class="rate-item">
-              <span class="rate-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="3" width="10" height="5" rx="1"/><path d="M7 8h10v2a5 5 0 0 1-10 0z"/><path d="M10 15.5 9 20h6l-1-4.5"/></svg></span>
-              <div class="rate-body">
-                <h4>Toilet Installation <span class="rate-badge">Flat rate</span></h4>
-                <p>New or replacement toilets, set, sealed, and haul-away included.</p>
-              </div>
-              <a class="rate-cta" href="tel:+16177620064">Get a price</a>
-            </li>
-            <li class="rate-item">
-              <span class="rate-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v3H4z"/><path d="M9 7v2a3 3 0 0 0 6 0V7"/><rect x="10" y="14" width="4" height="6" rx="1"/><path d="M12 12v2"/></svg></span>
-              <div class="rate-body">
-                <h4>Garbage Disposal Installation <span class="rate-badge">Flat rate</span></h4>
-                <p>Quiet, reliable disposals installed or swapped in a single visit.</p>
-              </div>
-              <a class="rate-cta" href="tel:+16177620064">Get a price</a>
-            </li>
-          </ul>
+          <div class="fixture-btns stagger" data-stagger="60">
+            <button type="button" class="fixture-btn" data-open-fixtures>Faucet Install or Replacement</button>
+            <button type="button" class="fixture-btn" data-open-fixtures>Shower Valve Replacement</button>
+            <button type="button" class="fixture-btn" data-open-fixtures>Shower Trim Upgrade</button>
+            <button type="button" class="fixture-btn" data-open-fixtures>Toilet Installation</button>
+            <button type="button" class="fixture-btn" data-open-fixtures>Garbage Disposal Installation</button>
+          </div>
         </div>
       </div>
     </section>
+
+    <!-- ===================== FIXTURE OPTIONS POP-UP ===================== -->
+    <dialog class="fixture-modal" id="fixture-modal" aria-labelledby="fixture-modal-title">
+      <div class="fm-head">
+        <h3 id="fixture-modal-title">Fixture Installation and Replacement</h3>
+        <button type="button" class="fm-close" data-close-fixtures aria-label="Close">&times;</button>
+      </div>
+      <ul class="fm-list">
+        <li>
+          <span class="fm-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h8a4 4 0 0 1 4 4v1"/><path d="M13 17h6v2h-6z"/><path d="M8 12V8h4v4"/><path d="M7 8h6"/><path d="M16 21v.01"/></svg></span>
+          <div><h4>Faucet Install or Replacement</h4><p>Kitchen and bath faucets, installed clean and leak-free.</p></div>
+        </li>
+        <li>
+          <span class="fm-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><path d="M12 7V4M12 20v-3M7 12H4M20 12h-3"/><circle cx="12" cy="12" r="1.6"/></svg></span>
+          <div><h4>Shower Valve Replacement</h4><p>Fix inconsistent temperature and worn valves behind the wall.</p></div>
+        </li>
+        <li>
+          <span class="fm-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v3"/><path d="M7 10a5 5 0 0 1 10 0v1H7z"/><path d="M8 14v1.5M12 14v1.5M16 14v1.5M10 18v1.5M14 18v1.5"/></svg></span>
+          <div><h4>Shower Trim Upgrade</h4><p>Refresh the look and feel of your shower without opening walls.</p></div>
+        </li>
+        <li>
+          <span class="fm-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="3" width="10" height="5" rx="1"/><path d="M7 8h10v2a5 5 0 0 1-10 0z"/><path d="M10 15.5 9 20h6l-1-4.5"/></svg></span>
+          <div><h4>Toilet Installation</h4><p>New or replacement toilets, set, sealed, and haul-away included.</p></div>
+        </li>
+        <li>
+          <span class="fm-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v3H4z"/><path d="M9 7v2a3 3 0 0 0 6 0V7"/><rect x="10" y="14" width="4" height="6" rx="1"/><path d="M12 12v2"/></svg></span>
+          <div><h4>Garbage Disposal Installation</h4><p>InSinkErator Badger 5 and similar, installed or swapped in a single visit.</p></div>
+        </li>
+      </ul>
+      <div class="fm-footer">
+        <p class="fm-footer-label">Ready to schedule?</p>
+        <div class="fm-actions">
+          <a class="btn btn-primary" href="tel:+16177620064">
+            <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.3 1.1L6.6 10.8z" fill="currentColor"/></svg>
+            Call
+          </a>
+          <a class="btn fm-btn-outline" href="sms:+16177620064">Text us</a>
+          <!-- Book online (Housecall Pro): set the href to the HCP online-booking
+               link and remove the `hidden` attribute to enable. -->
+          <a class="btn fm-btn-outline" id="book-online-btn" href="#" hidden>Book online</a>
+        </div>
+      </div>
+    </dialog>
 
     <div class="wave-divider" aria-hidden="true">
       <svg viewBox="0 0 1440 100" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
@@ -201,33 +218,17 @@
     <!-- ===================== OUR WORK ===================== -->
     <section class="section tint" id="work">
       <div class="container">
-        <div class="section-head reveal">
-          <span class="eyebrow">Our work</span>
-          <h2 class="section-title">From behind the walls to the finished space.</h2>
-          <p class="section-sub">The quality you'll live with every day starts with the craftsmanship you'll never see. A look at recent projects across the Greater Boston area.</p>
+        <div class="work-teaser reveal">
+          <a class="work-teaser-img" href="gallery.html" aria-label="View our work gallery">
+            <img src="assets/work-1.jpg" alt="High-efficiency boiler, copper manifold, and indirect water heater installed by TruServ" loading="lazy">
+          </a>
+          <div class="work-teaser-body">
+            <span class="eyebrow">Our work</span>
+            <h2 class="section-title">Craftsmanship you can see.</h2>
+            <p class="section-sub">Recent boiler conversions, mechanical room build-outs, and fixture upgrades across the Greater Boston area.</p>
+            <a class="btn btn-primary work-teaser-cta" href="gallery.html">View our work</a>
+          </div>
         </div>
-
-        <!-- GALLERY — to add a photo: copy a <figure> block, set the image
-             file, category tag, and one-line caption. Newest first. -->
-        <div class="gallery reveal stagger" data-stagger="100">
-          <figure class="shot">
-            <div class="shot-img"><img src="assets/work-1.jpg" alt="High-efficiency boiler, copper manifold, and indirect water heater installed by TruServ" loading="lazy"></div>
-            <figcaption>High-efficiency boiler with indirect hot water</figcaption>
-          </figure>
-          <figure class="shot">
-            <div class="shot-img"><img src="assets/work-2.jpg" alt="Copper heating manifold with circulator pumps" loading="lazy"></div>
-            <figcaption>Multi-zone heating manifold, built to last</figcaption>
-          </figure>
-          <figure class="shot">
-            <div class="shot-img"><img src="assets/work-3.jpg" alt="Wall-hung boiler with clean copper distribution piping" loading="lazy"></div>
-            <figcaption>Space-saving wall-hung boiler conversion</figcaption>
-          </figure>
-          <figure class="shot">
-            <div class="shot-img"><img src="assets/work-4.jpg" alt="Mechanical room with boiler, indirect tank, and radiant distribution" loading="lazy"></div>
-            <figcaption>Full mechanical room build-out</figcaption>
-          </figure>
-        </div>
-        <p class="gallery-note reveal">Finished kitchens, baths, and whole-home projects from our recent developments are being photographed now — check back soon for before-and-after pairs.</p>
       </div>
     </section>
 
